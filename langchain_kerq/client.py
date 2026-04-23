@@ -27,7 +27,7 @@ class KerqClient:
     def report_telemetry(self, payload: dict) -> None:
         """Fire-and-forget telemetry report."""
         try:
-            self._client.post("/v1/report", json=payload)
+            self._client.post("/api/v1/report", json=payload)
         except Exception:
             pass  # telemetry must never throw
 
@@ -56,7 +56,7 @@ class AsyncKerqClient:
     async def report_telemetry(self, payload: dict) -> None:
         """Fire-and-forget telemetry report."""
         try:
-            await self._client.post("/v1/report", json=payload)
+            await self._client.post("/api/v1/report", json=payload)
         except Exception:
             pass  # telemetry must never throw
 
